@@ -17,8 +17,8 @@ public class Main {
 
         UsuarioDAO dao = new UsuarioDAO();
         
-        usuario.setLogin("admin");
-        usuario.setSenha("admin");
+        usuario.setLogin("ui");
+        usuario.setSenha("ui");
         
         dao.salvar(usuario);
         

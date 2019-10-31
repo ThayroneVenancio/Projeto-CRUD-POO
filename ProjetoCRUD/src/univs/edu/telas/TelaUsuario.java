@@ -65,6 +65,11 @@ public class TelaUsuario extends javax.swing.JFrame {
         });
 
         tfSenha.setText("jPasswordField1");
+        tfSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSenhaActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("SALVAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +79,11 @@ public class TelaUsuario extends javax.swing.JFrame {
         });
 
         jButton2.setText("PESQUISAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,6 +158,16 @@ public class TelaUsuario extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        TelaPesquisaUsuario tela = new TelaPesquisaUsuario();
+        tela.setVisible(true); // Para aparecer a tela
+        dispose(); //FECHA A TELA
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSenhaActionPerformed
     
        public void limparCampos(){
            usuario = new Usuario();

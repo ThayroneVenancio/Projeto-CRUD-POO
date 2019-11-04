@@ -5,6 +5,7 @@
  */
 package univs.edu.telas;
 
+import javax.swing.JOptionPane;
 import univs.edu.usuario.Usuario;
 import univs.edu.usuario.UsuarioDAO;
 import univs.edu.usuario.UsuarioTableModel;
@@ -81,6 +82,11 @@ public class TelaPesquisaUsuario extends javax.swing.JFrame {
         });
 
         jButton3.setText("Editar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Voltar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -146,13 +152,36 @@ public class TelaPesquisaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_tfLoginActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       int linha = tabelaUsuario.getSelectedRow(); //PARA CAPTURAR A LINHA SELECIONADA, FOI CRIADO UMA VARIAVEL PARA RECEBER ESSA LINHA
+       if(linha == -1){ //POR PADRAO A LINHA DA TEBELA JÁ VEM COM -1
+           JOptionPane.showMessageDialog(null, "SELECIONE UMA LINHA");
+        }else if(JOptionPane.showConfirmDialog(null, "DESEJA REALMENTE EXCLUIR ESTÉ USUARIO", "Excluir Usuário", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+          usuario = dao.pesquisar((int) tabelaUsuario.getValueAt(linha, 0));
+          dao.excluir(usuario);
+          atualizarTabela();
+          JOptionPane.showMessageDialog(null, "USÁRIO EXCLUIDO!!!");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int linha = tabelaUsuario.getSelectedRow(); //PARA CAPTURAR A LINHA SELECIONADA, FOI CRIADO UMA VARIAVEL PARA RECEBER ESSA LINHA
+       if(linha == -1){ //POR PADRAO A LINHA DA TEBELA JÁ VEM COM -1
+           JOptionPane.showMessageDialog(null, "SELECIONE UMA LINHA");
+        }else{
+            usuario = dao.pesquisar((int) tabelaUsuario.getValueAt(linha, 0));
+            TelaUsuario tela = new TelaUsuario(); //INSTACIANDO A TELA DE USUARIO, POREM AINDA NAO ESTÁ VISIVEL
+            tela.usuario = usuario;
+            tela.preencherUsuario();
+            tela.setVisible(true); //DEIXAR A TELA VISIVEL
+            dispose(); //FECHARA  TELA
+            
+       }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -113,5 +113,13 @@ public class Funcionario {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    public void setNomeFuncionario(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCpf(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -108,18 +108,31 @@ public class Funcionario {
     }
 
     /**
+     * @param nomeFuncionario the nomeFuncionario to set
+     */
+    public void setNomeFuncionario(String nomeFuncionario) {
+        this.nomeFuncionario = nomeFuncionario;
+    }
+
+    /**
+     * @param cpf the cpf to set
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    /**
      * @param usuario the usuario to set
      */
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public void setNomeFuncionario(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    /**
+     * @param usuario the usuario to set
+     */
+    
 
-    public void setCpf(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }

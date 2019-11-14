@@ -22,7 +22,7 @@ public class FuncionarioDAO {
             JOptionPane.showMessageDialog(null, "FUNCIONARIO CADASTRADO");
         }else{
             editar(funcionario);
-            JOptionPane.showMessageDialog(null, "USUARIO EDITADO");
+            JOptionPane.showMessageDialog(null, "FUNCIONARIO EDITADO");
         }
         
         transacao.commit();

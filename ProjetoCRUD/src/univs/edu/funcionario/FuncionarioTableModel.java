@@ -1,6 +1,5 @@
 package univs.edu.funcionario;
 
-import univs.edu.usuario.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -8,7 +7,7 @@ import javax.swing.table.AbstractTableModel;
 public class FuncionarioTableModel extends AbstractTableModel {
 
     private List<Funcionario> funcionarios = new ArrayList<>();
-    private String[] colunas = {"idFuncionario","nome", "cargo", "cpf", "salario", "usuario"};
+    private String[] colunas = {"Id", "Nome", "Cargo", "CPF", "Salário", "Usuário"};
 
     public FuncionarioTableModel(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
@@ -58,7 +57,7 @@ public class FuncionarioTableModel extends AbstractTableModel {
                 return colunas[4];
             case 5:
                 return colunas[5];
-            
+
         }
         return null;
     }
